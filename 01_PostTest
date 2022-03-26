@@ -18,8 +18,8 @@ int main(){
 		//TAMPILAN MENU DAN INPUT PILIHAN
 		cout << "===== PROGRAM MENENTUKAN HASIL KOMBINASI DAN PERMUTASI =====" << endl << endl;
 		cout << "--- Pilih menu di bawah ---" << endl;
-		cout << "| 1. Kombinasi            |" << endl;
-		cout << "| 2. Permutasi            |" << endl;
+		cout << "| 1. Permutasi            |" << endl;
+		cout << "| 2. Kombinasi            |" << endl;
 		cout << "---------------------------" << endl;	
 		cout << "Masukan pilihan Anda: ";
 		cin >> pilihan;
