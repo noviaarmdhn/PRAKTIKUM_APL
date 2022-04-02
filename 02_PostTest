@@ -1,0 +1,110 @@
+#include <iostream>
+#include <conio.h>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+	//A = Matriks Pertama, B = Matriks Kedua, C = Matriks Hasil
+    int A[3][3], B[3][3], C[3][3], i, j, k;
+    char ulang;
+	
+	do
+	{
+		cout << "		 	  ====== PROGRAM HITUNG PERKALIAN MATRIKS 3X3 ====== " << endl << endl;
+		cout << "! Input angka dimulai dari baris ke-1, kolom ke-1, baris ke-1 kolom ke-2, baris ke-1 kolom ke-3, dst. ! " << endl << endl;
+		cout << "Tekan enter untuk melanjutkan.." << endl << endl;
+		getch();  //Fungsi untuk menahan (pause) output menggunakan header <conio.h>
+		
+			
+		//Input nilai matriks A
+	    cout << "Matriks A : " << endl;
+	    cout << "--------------------" << endl;
+		for(i=0; i<3; i++)
+		{
+	    	for(j=0; j<3; j++)
+	        {
+	        	cout << "Masukkan angka : ";
+	        	cin >> A[i][j];
+	        }
+	   }
+	
+		cout<<endl;
+		//Input nilai matriks B
+	    cout << "Matriks B : " << endl;
+	    cout << "--------------------" << endl;
+		for(i=0; i<3; i++)
+		{
+	    	for(j=0; j<3; j++)
+	        {
+	        	cout << "Masukkan angka : ";
+	        	cin >> B[i][j];
+	        }
+	   }
+	
+	
+	    //Perkalian Matriks
+		for (i=0; i<3; i++)
+		{
+			for (j=0; j<3; j++)
+			{
+				C[i][j] = 0;
+			    for (k=0; k<3; k++)
+				{
+					C[i][j] += A[i][k] * B[k][j];
+				}
+	    	}
+		}
+	 
+	
+	    cout << endl << endl << "--- Menghitung Perkalian Matriks --- " << endl << endl;
+	    //Output Matriks A
+		cout << "Matriks A : " << endl;
+		for(i=0; i<3; i++)
+		{
+	    	for(j=0; j<3; j++)
+	        {
+	        	//setiosflag(ios::left) : Membuat tampilan output rata kiri, setw() : mengatur space == Pake header <iomanip>
+	       		cout << setiosflags(ios::left) << setw(5) << A[i][j];
+	        }
+	        cout<<endl;
+		}
+		
+		cout << endl << "     X" << endl;
+		cout << endl;
+	    //Output Matriks B
+		cout << "Matriks B : " << endl;
+		for(i=0; i<3; i++)
+		{
+	    	for(j=0; j<3; j++)
+	        {
+	       		cout << setiosflags(ios::left) << setw(5) << B[i][j];
+	        } 
+	        cout<<endl;
+		}
+	    
+		//Menampilkan hasil
+	    cout << endl << endl;
+	    cout << "Hasil Perkalian Matriks : " << endl;
+	    cout << "------------------------- " << endl;
+		for(i=0; i<3; i++)
+		{
+			for(j=0; j<3; j++)
+			{
+	    		cout << setiosflags(ios::left) << setw(5) << C[i][j];
+			}
+		
+		cout << endl << endl;
+		}
+	
+		//Pengulangan program jika y = yes maka program akan mengulang, jika n = no maka program akan berhenti
+		cout << "Ingin mengulang program? (y/n)";
+		cin >> ulang;
+		cout << endl;
+	}
+	
+	while(ulang == 'y');
+	
+return 0;
+//Mohon maaf sebelumnya bang, ternyata saya masih kurang di pointer. Nanti saya pelajarin lebih lanjut.
+}
